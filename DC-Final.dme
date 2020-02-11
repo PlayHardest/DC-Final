@@ -1,0 +1,42 @@
+// DM Environment file for DC-Final.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+#define FILE_DIR "Icons"
+#define FILE_DIR "Icons/Effects"
+#define FILE_DIR "Icons/Map"
+#define FILE_DIR "Icons/Mobs"
+#define FILE_DIR "Icons/UI"
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+#define DEBUG
+// END_PREFERENCES
+#define ADMIN 1
+#define JUMP 1
+#define JUMP_ACCEL 16
+#define CEILING 100
+// BEGIN_INCLUDE
+#include <cheesypants\ARPGFramework\ARPGFramework.dme>
+#include "#define.dm"
+#include "Admin.dm"
+#include "Combat.dm"
+#include "Effects.dm"
+#include "Finishers.dm"
+#include "HUD.dm"
+#include "Keyboard.dm"
+#include "Main.dm"
+#include "Mobs.dm"
+#include "Preferences.dm"
+#include "Procedures.dm"
+#include "Todo.dm"
+#include "Variables.dm"
+#include "Interface.dmf"
+#include "TestMap.dmm"
+// END_INCLUDE
+

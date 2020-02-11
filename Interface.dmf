@@ -1,0 +1,133 @@
+macro "macro"
+	elem 
+		name = "Center+REP"
+	elem 
+		name = "Northeast+REP"
+	elem 
+		name = "Southeast+REP"
+	elem 
+		name = "Southwest+REP"
+	elem 
+		name = "Northwest+REP"
+	elem 
+		name = "West+REP"
+	elem 
+		name = "North+REP"
+	elem 
+		name = "East+REP"
+	elem 
+		name = "South+REP"
+	elem 
+		name = "Any"
+		command = "KeyDown [[*]]"
+	elem 
+		name = "Any+UP"
+		command = "KeyUp [[*]]"
+
+
+menu "menu"
+	elem 
+		name = "&Quit"
+		command = ".quit"
+		category = "&File"
+		saved-params = "is-checked"
+
+
+window "adminoutputpanel"
+	elem "adminoutputpanel"
+		type = MAIN
+		pos = 372,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "AdminOutputPanel"
+		statusbar = false
+		can-resize = false
+		outer-size = 658x526
+	elem "input1"
+		type = INPUT
+		pos = 0,452
+		size = 640x28
+		anchor1 = none
+		anchor2 = none
+		border = sunken
+		saved-params = ""
+		command = "CommandLine"
+	elem "info1"
+		type = INFO
+		pos = 0,0
+		size = 640x232
+		anchor1 = 0,0
+		anchor2 = 100,54
+		is-default = true
+		saved-params = ""
+		tab-background-color = none
+	elem "output1"
+		type = OUTPUT
+		pos = 0,232
+		size = 640x220
+		anchor1 = 0,54
+		anchor2 = 100,100
+		is-default = true
+		saved-params = "max-lines"
+
+window "controls"
+	elem "controls"
+		type = MAIN
+		pos = 372,0
+		size = 544x205
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Controls"
+		statusbar = false
+		outer-size = 562x251
+		inner-size = 544x205
+	elem "label1"
+		type = LABEL
+		pos = 0,0
+		size = 544x205
+		anchor1 = 0,0
+		anchor2 = 100,100
+		text-color = #ffffff
+		background-color = #000000
+		saved-params = ""
+		text = "Z - Light Attack\nX - Heavy Attack\nC - Block\nC+UP - Charge Ki\nSpace - Jump\nSpace after a knockback - Chase \nSpace while being attacked - Hyper Movement (costs 50 energy - invincible)\nSpace while in recovery frames - Hyper Movement  (costs 20 energy)\nSpace while in a finisher combo animation - Hyper Movement (costs 10 energy)\nSpace when an opponent uses their hyper movement - Hyper Movement (costs 20 energy)"
+
+window "window1"
+	elem "window1"
+		type = MAIN
+		pos = 372,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Dragon Chronicles"
+		statusbar = false
+		macro = "macro"
+		outer-size = 658x526
+	elem "browser1"
+		type = BROWSER
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = none
+		saved-params = ""
+	elem "map1"
+		type = MAP
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "zoom;letterbox;zoom-mode"
+		icon-size = 32
+		zoom = 1
+
