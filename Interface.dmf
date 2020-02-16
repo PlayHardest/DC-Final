@@ -40,13 +40,11 @@ window "adminoutputpanel"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "AdminOutputPanel"
 		statusbar = false
 		can-resize = false
-		outer-size = 658x526
 	elem "input1"
 		type = INPUT
 		pos = 0,452
@@ -64,7 +62,6 @@ window "adminoutputpanel"
 		anchor2 = 100,54
 		is-default = true
 		saved-params = ""
-		tab-background-color = none
 	elem "output1"
 		type = OUTPUT
 		pos = 0,232
@@ -81,13 +78,10 @@ window "controls"
 		size = 544x205
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Controls"
 		statusbar = false
-		outer-size = 562x251
-		inner-size = 544x205
 	elem "label1"
 		type = LABEL
 		pos = 0,0

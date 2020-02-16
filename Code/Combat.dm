@@ -382,6 +382,7 @@ mob
 				setPosition(rand(700,705),rand(1150,1155),1)
 				HealthAdjust(MaxHP)
 				EnergyAdjust(MaxEnergy)
+				transform=null
 				dead=0
 				no_state=0
 
@@ -512,6 +513,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Knockback(dur,d,attacker)
 				if(3)//launch - JUMP_height
 					if(flinching)	Unflinch()
@@ -521,6 +523,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Launch(dur,JUMP_ACCEL,d,attacker,5)
 				if(3.1)//launch - slowly
 					if(flinching)	Unflinch()
@@ -530,6 +533,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Launch(dur,JUMP_ACCEL,d,attacker,2)
 				if(3.2)//launch straight upwards
 					if(flinching)	Unflinch()
@@ -539,6 +543,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Launch(dur,JUMP_ACCEL,d,attacker,1)
 						//StepHeightIncrease(48,_time=2)
 						//hangtime=20
@@ -550,6 +555,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Ground(dur,-10,d,attacker,20)
 				if(3.6)//ground slowly
 					if(flinching)	Unflinch()
@@ -559,6 +565,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Ground(dur,-5,d,attacker,20)
 				if(3.7)//ground immediately
 					if(flinching)	Unflinch()
@@ -568,6 +575,7 @@ mob
 						unblock_delay=5
 						Nudge(dur/10,d,attacker)
 					else
+						ShockWave(src)
 						Ground(dur,-20,d,attacker,5)
 				if(4)//nudge
 					if(flinching)	Unflinch()

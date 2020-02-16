@@ -1,20 +1,20 @@
 // BEGIN_INTERNALS
 /*
 MAP_ZOOM: 1.000
-LAST_COMPILE_TIME: 1581208492
+LAST_COMPILE_TIME: 1581870773
+DIR: Code Icons Icons\Effects Icons\Map Icons\Mobs Icons\UI 
 PACKAGE_RSC_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_rsc.zip
-DIR: Icons Icons\Effects Icons\Map Icons\Mobs Icons\UI 
 AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_src.zip
 LAST_COMPILE_VERSION: 513.1494
-PACKAGE_DME_START: 
 PACKAGE_TYPE: 0
+PACKAGE_DME_START: 
+WINDOW: Interface.dmf;Icons\Canvas.dmi;Icons\Effects\96x96.dmi;Code\Effects.dm;Icons\Mobs\Base.dmi;Code\Combat.dm;Code\Todo.dm;Code\Admin.dm;Code\Main.dm;Code\Preferences.dm;Code\Mobs.dm;Code\Variables.dm;Code\HUD.dm;Code\Keyboard.dm
 PACKAGE_DME_INFO: 
-WINDOW: Main.dm;Combat.dm;Finishers.dm;Mobs.dm;Procedures.dm;Keyboard.dm;Todo.dm;Variables.dm;HUD.dm;Effects.dm;Interface.dmf;Admin.dm;#define.dm
-FILE: #define.dm
-PACKAGE_DME_DEMO: 
+FILE: Code\Main.dm
 PACKAGE_DMB_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final.zip
+PACKAGE_DME_DEMO: 
 */
 // END_INTERNALS

@@ -68,9 +68,6 @@ proc
 		m_a.dir = d ? d : I.dir
 		m_a.icon_state="dash"
 		I.appearance=m_a
-		//I.color=list(0.3,0.3,0.3, 0.59,0.59,0.59, 0.11,0.11,0.11, 0,0,0)
-		//I.alpha=100
-		//I.dir=d? d : I.dir
 		I.setPosition(m)
 		animate(I,pixel_x=I.pixel_x+p_x,pixel_y=I.pixel_y+p_y,alpha=0,time=_time)
 		sleep(_time)
@@ -98,6 +95,22 @@ proc
 		I.layer=m.layer
 		flick(I.flickstate,I)
 		sleep(2)
+		Recycle(e=I)
+
+	ShockWave(mob/m,t=3)
+		set waitfor=0
+		if(!m)	return
+		var/visual_fx/I=Recycle(/visual_fx/size96x96)
+		I.icon_state="waves"
+		I.pixel_x=-32
+		I.pixel_y=-35
+		var/matrix/M=matrix()
+		M.Scale(0)
+		I.transform=M
+		I.setPosition(m)
+		animate(I,transform=matrix()*3,time=t)
+		animate(I,alpha=0,time=t-1)
+		sleep(t)
 		Recycle(e=I)
 
 	SpeedWave_fx(mob/m)

@@ -17,6 +17,9 @@ mob
 					src<<"Your counter type is now [counter_type]"
 			if(a=="/me")
 				VarView(src)
+			if(a=="/players")
+				for(var/s in player_list)
+					src<<s
 
 
 
@@ -24,6 +27,10 @@ mob
 		if(!(src in admins))	return
 		var/varval=input("Enter the var of [m] you would like to see.")as text|null//client.focus
 		switch(varval)
+			if("/mobs")
+				for(var/mob/a in world)
+					src<<a
+				src<<numofmobs
 			if("/effects")
 				for(var/l in effect_appearance)
 					src<<l

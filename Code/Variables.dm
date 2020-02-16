@@ -96,16 +96,16 @@ mob
 		hurtby=null
 		lasthit=null
 		target=null
-		h_box=null
-		HUDframe=null
-		combotrack=null
-		HPbar=null
-		Kibar=null
-		DisplayHPbar=null
-		DisplayKibar=null
-		DisplayFrame=null
-		aura_fx=null
-		flash_fx=null
+		del h_box
+		del HUDframe
+		del combotrack
+		del HPbar
+		del Kibar
+		del DisplayHPbar
+		del DisplayKibar
+		del DisplayFrame
+		del aura_fx
+		del flash_fx
 		vis_contents=list()
 		..()
 
@@ -177,8 +177,8 @@ mob
 		list
 			combos=list()//list of all owned combos
 
-		HP=300
-		MaxHP=300
+		HP=100
+		MaxHP=100
 		Energy=150
 		MaxEnergy=150
 		base_damage=10
