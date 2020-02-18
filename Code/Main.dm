@@ -42,6 +42,7 @@ mob
 
 	Logout()
 		..()
+		global.player_list-=src
 		del src
 
 

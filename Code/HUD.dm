@@ -134,7 +134,7 @@ obj
 			icon_state="fill"
 			width=223
 
-		AMaskBar//root object -- KEEP_TOGETHER
+		AMaskBar
 			appearance_flags = KEEP_TOGETHER
 			mouse_opacity = 0
 			var
@@ -155,6 +155,11 @@ obj
 				bg.vis_contents-=fill
 				if(fill2)	bg.vis_contents-=fill2
 				mask.vis_contents-=bg
+				del fg
+				del bg
+				del fill
+				del fill2
+				del mask
 				..()
 
 			BuildComponents()
@@ -251,3 +256,10 @@ hudobj
 		anchor_y="NORTH"
 		width=320
 		height=48
+
+	FullScreen
+		anchor_x="WEST"
+		anchor_y="SOUTH"
+
+		Activate(mob/m)
+

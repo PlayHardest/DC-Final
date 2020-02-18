@@ -385,6 +385,7 @@ mob
 				transform=null
 				dead=0
 				no_state=0
+				StateMachine()
 
 
 		CounterAttack(mob/m,air=0,_time=10)
