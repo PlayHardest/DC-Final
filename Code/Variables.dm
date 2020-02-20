@@ -48,7 +48,7 @@ var
 						"soft nudge"="bound_height=20&bound_width=20&power=0.7&active=3&effect=4&duration=10&a_type=Physical|center-front",
 						"hard nudge"="bound_height=20&bound_width=20&power=0.7&active=3&effect=4&duration=25&a_type=Physical|center-front",
 						"stun nudge"="bound_height=20&bound_width=20&power=0.7&active=3&effect=5&duration=20&a_type=Physical|center-front",
-						"chaseatk"="bound_height=32&bound_width=32&power=0.1&active=1&effect=4&duration=5&a_type=Physical|center-front",
+						"chaseatk"="bound_height=32&bound_width=32&power=0.1&active=1&effect=4&duration=10&a_type=Physical|center-front",
 						"push"="bound_height=20&bound_width=20&power=0.01&active=2&effect=2&duration=100&a_type=Physical|center-front",
 						"push-master"="bound_height=20&bound_width=20&power=0.01&active=1&effect=2&duration=150&a_type=Physical|center-front",
 						"default counter"="bound_height=20&bound_width=20&power=1.2&active=3&effect=2&duration=300&a_type=Physical|center-front",
@@ -87,9 +87,15 @@ obj
 			grab_end_hit=0
 			//trail_bar=0
 
-//client
-	//var
-		//Preferences/options=new/Preferences
+client
+	var
+		tmp
+			list
+				menu=list()
+
+			menu_view=0
+
+			hudobj/fullscreen
 
 mob
 	Del()

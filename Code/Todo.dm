@@ -34,7 +34,7 @@ UI
 	-Combo counter with damage info (like in budokai 3)
 
 	Options Menu
-		-Screen will darken and menu options will slide from the left to the right
+		-(DONE)Screen will darken and menu options will slide from the left to the right
 		-Options menu will be traversible with arrow keys
 		-Selected option will move to the top center of the screen, other options will recede offscreen to the left and then content for selected option will fade in
 		-Options will slide forward to the right slightly when active

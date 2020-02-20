@@ -212,12 +212,12 @@ mob
 					return
 			lasthit=m//set the lasthit value to the mob that is being attacked
 			while(lasthit)//while lasthit is true
-				if((!lasthit||lasthit.ingame||lasthit.dead) && !lasthit.hyper_move)	break//keep them in a loop until the mob dies, recovers or leaves the game world
-				//making sure that the flag is kept while hyper movement is being used by the entity being attacked
+				if(!lasthit||lasthit.ingame||lasthit.dead||lasthit.hyper_move)	break//keep them in a loop until the mob dies, recovers, leaves the game world or uses hyper
+				//movement
 				sleep(1)
 			if(lasthit?.client)	lasthit.HPbar.setValue(lasthit.HP/lasthit.MaxHP,10,2)
 			if(lasthit)	lasthit.HideStatus(50)
-			//world<<"[lasthit] recovers"
+			world<<"[lasthit] recovers||[lasthit.ingame]||[lasthit.flinching]||[lasthit.travel_distance]"
 			lasthit=null//set the lasthit value to null
 			finisher=0
 			finisher_confirm=0
@@ -579,7 +579,6 @@ mob
 						ShockWave(src)
 						Ground(dur,-20,d,attacker,5)
 				if(4)//nudge
-					if(flinching)	Unflinch()
 					var/d = attack_obj ? attack_obj.dir : attacker.dir
 					if(dmgtype=="remote")	d=attack_obj ? GetDir(attack_obj,src): GetDir(attacker,src)
 					if(block)
@@ -587,7 +586,6 @@ mob
 					else
 						Nudge(dur,d,attacker)
 				if(5)//nudge with a flinch at the
-					if(flinching)	Unflinch()
 					var/d = attack_obj ? attack_obj.dir : attacker.dir
 					if(dmgtype=="remote")	d=attack_obj ? GetDir(attack_obj,src): GetDir(attacker,src)
 					if(block)
@@ -631,7 +629,7 @@ mob
 					flinchers-="[flinch_end]"
 			flinching=0
 			flinch_end=0
-			ingame=1
+			if(!travel_distance)	ingame=1
 			last_flinch=0
 
 

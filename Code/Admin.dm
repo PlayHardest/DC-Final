@@ -3,23 +3,27 @@ mob
 		CommandLine(a as text)
 			set hidden=1
 			if(a=="/admin 1")
-				if(!(src in admins))	admins+=src
-				src<<"Admin mode enabled"
+				if(!(usr in admins))	admins+=usr
+				usr<<"Admin mode enabled"
 			if(a=="/admin 0")
-				if(src in admins)	admins-=src
-				src<<"Admin mode disabled"
+				if(usr in admins)	admins-=usr
+				usr<<"Admin mode disabled"
 			if(a=="/cpu")
-				src<<world.cpu
+				usr<<world.cpu
 			if(a=="/setcounter")
 				var/val=input("Enter what you would like to set the countertype to","Current Counter:[counter_type]")as null|anything in list("default counter","default counter|mastery","push counter","push counter|mastery","evasive counter","evasive counter|mastery")
 				if(val)
 					counter_type=val
-					src<<"Your counter type is now [counter_type]"
+					usr<<"Your counter type is now [counter_type]"
 			if(a=="/me")
-				VarView(src)
+				VarView(usr)
 			if(a=="/players")
 				for(var/s in player_list)
-					src<<s
+					usr<<s
+			if(a=="/fade in")
+				usr.client.fullscreen.fade(0,10)
+			if(a=="/fade out")
+				usr.client.fullscreen.fade(255,10)
 
 
 

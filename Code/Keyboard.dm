@@ -3,12 +3,21 @@ Controls
 		l_attack=K_ATTACK1
 		h_attack=K_ATTACK2
 		block=K_BLOCK
+		menu=K_ESC
 
 
 mob
 	key_down(k, client/c)
 		StateMachine()
 		c.currentkey=k
+		if(c?.menu_view)
+			c.MenuKey(k)
+			return
+		if(k==c.controls.menu)
+			c.OpenMenu()
+		if(c?.active_textbox)
+			c.keyinput(k)
+			return
 		if(finisher==1 || attacking && !lasthit || hurtby?.lasthit==src || lasthit?.hyper_move)
 			if(k==c.controls.jump)	HyperMove()
 			return
@@ -20,9 +29,6 @@ mob
 			return
 		if(k==c.controls.jump && chase)
 			travel_distance=0
-			return
-		if(c?.active_textbox)
-			c.keyinput(k)
 			return
 		if(c.keys["alt"])
 			if(k=="return")

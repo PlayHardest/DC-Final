@@ -109,8 +109,8 @@ proc
 		I.transform=M
 		I.setPosition(m)
 		animate(I,transform=matrix()*3,time=t)
-		animate(I,alpha=0,time=t-1)
-		sleep(t)
+		animate(alpha=0,time=t+2,flags=ANIMATION_PARALLEL)
+		sleep(t+2)
 		Recycle(e=I)
 
 	SpeedWave_fx(mob/m)

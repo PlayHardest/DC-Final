@@ -134,6 +134,12 @@ obj
 			icon_state="fill"
 			width=223
 
+		menu_options
+			layer=HUD_LAYER+3
+			icon='Menu.dmi'
+			icon_state="option"
+
+
 		AMaskBar
 			appearance_flags = KEEP_TOGETHER
 			mouse_opacity = 0
@@ -258,8 +264,49 @@ hudobj
 		height=48
 
 	FullScreen
+		icon='Screen.dmi'
+		icon_state="screen"
 		anchor_x="WEST"
 		anchor_y="SOUTH"
+		layer=HUD_LAYER+2
+		width=32
+		height=32
+		alpha=0
 
-		Activate(mob/m)
+		Activate(client/c)
+			width=c.view_width*32
+			height=c.view_height*32
+			var/matrix/m=matrix()
+			m.Scale(c.view_width,c.view_height)
+			transform=m.Translate(width/2-16,height/2-16)
+
+		updatePos()
+			Activate(client)
+			..()
+
+	MenuAnchor
+		//icon='Menu.dmi'
+		//icon_state="anchor"
+		width=506
+		height=52
+
+
+		updatePos()
+			Activate()
+			..()
+
+		Activate()
+			screen_x=((client.view_width*32)/2) - ((width+32)/2)
+			screen_y=((client.view_height*32)/2) - (height/2) + 120
+
+		BuildComponents()
+			hide()
+			client.menu["0"]=src
+			for(var/i=1 to 4)
+				var/obj/HudobjHelper/a=new/obj/HudobjHelper/menu_options
+				a.pixel_y=-64*i
+				client.menu["[i]"]=a
+				vis_contents+=a
+
+
 
