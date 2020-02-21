@@ -9,6 +9,9 @@ var
 			//"" -- yellow/orange
 			//"" -- pinkish red
 
+		max_menu_value=list("main"=4)
+		min_menu_value=list("main"=1)
+
 		trailbars=list("health")
 		attackstates=list("puncha","punchb","kicka","kickb")
 		animation_states=list("puncha"=3,"punchb"=3,"kicka"=3,"kickb"=3)
@@ -18,6 +21,10 @@ var
 						"basic heavy"=list("heavy","heavy","heavy","heavy"),
 						"basic launch"=list("light","light","heavy","heavy")
 						)
+
+		menu_hierarchy=list("main"="","inventory"="main","character"="main","skills"="main","-"="main")
+		menu_hierarchy_id=list("main"="","inventory"="main-2","character"="main-1","skills"="main-3","-"="main-4")
+		//each button will know what screen it will point to and make load individually, however the preceeding menu will be stored here
 
 		all_finishers=list("basic light"=list("default light"),
 						   "basic heavy"=list("default heavy"),
@@ -78,6 +85,8 @@ var
 
 obj
 	var
+		id=0
+
 		tmp
 			end_var=""
 			a_type=""
@@ -94,7 +103,10 @@ client
 				menu=list()
 
 			menu_view=0
+			menu_active=1
+			menu_category="main"
 
+			obj/menu_focus
 			hudobj/fullscreen
 
 mob

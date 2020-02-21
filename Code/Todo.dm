@@ -24,6 +24,7 @@ Pursue
 
 
 General
+	-Update Flinching system to be a borrowed time system( like StateMachine)
 	-Save System
 	-Inventory System (list--> most items will be displayed in text form)
 	-Skills will be displayed same way as before

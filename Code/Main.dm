@@ -29,15 +29,6 @@ mob
 		ingame=1
 		step_size=GetSpeed()
 		setPosition(rand(700,705),rand(1150,1155),1)
-		client.chatbox = new/hudobj/chatbox(null,client,show=1)
-		client.chatbox.filters +=filter(type="drop_shadow", x=0, y=-1,size=0, offset=0, color=rgb(3,3,3,170)) //filter(type="outline",size=1)
-		client.textbox = new/hudobj/textbox(null,client,show=1)
-		client.textbox.filters +=filter(type="drop_shadow", x=0, y=-1,size=0, offset=0, color=rgb(3,3,3,170))
-		client.fullscreen = new/hudobj/FullScreen(null,client,show=0)
-		var/hudobj/a=new/hudobj/MenuAnchor(null,client,show=0)
-		a.Activate()
-		a.show()
-		a.BuildComponents()
 		global.player_list+=client
 		PrntToClients(src,"Welcome to Dragon Chronicles v[game_version]\nPress alt+2 to see the instructions\nPress alt+1 to open the output console")
 		src<<"Type /setcounter to change your counter type"
@@ -47,6 +38,12 @@ mob
 
 	Logout()
 		..()
+		del client.chatbox
+		del client.textbox
+		del client.fullscreen
+		for(var/datum/s in client.menu)
+			s.destroy=1
+			del s
 		global.player_list-=src
 		del src
 

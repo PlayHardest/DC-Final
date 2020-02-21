@@ -25,6 +25,15 @@ mob
 			set waitfor=0
 			while(!client.view_width)
 				sleep(1)
+			client.chatbox = Object_Pool(/hudobj/chatbox,creation_params=list(null,client,list(),1),_new=1)
+			client.chatbox.filters +=filter(type="drop_shadow", x=0, y=-1,size=0, offset=0, color=rgb(3,3,3,170))
+			client.textbox = Object_Pool(/hudobj/textbox,creation_params=list(null,client,list(),1),_new=1)
+			client.textbox.filters +=filter(type="drop_shadow", x=0, y=-1,size=0, offset=0, color=rgb(3,3,3,170))
+			client.fullscreen = Object_Pool(/hudobj/FullScreen,creation_params=list(null,client,list(),0),_new=1)
+			var/hudobj/a=new/hudobj/MenuAnchor(null,client,show=0)
+			a.Activate()
+			a.show()
+			a.BuildComponents()
 			combotrack=Object_Pool(/hudobj/ComboTracker,creation_params=list(null,client,list(),0),_new=1)
 			HUDframe=Object_Pool(/hudobj/HUDFrame,creation_params=list(null,client,list(),1),_new=1)
 			HPbar=Object_Pool(/obj/HudobjHelper/AMaskBar,creation_params=list("icon"='Icons/UI/HUD.dmi',"base_state"="health","width"=289,"height"=8,"orientation"=EAST))
@@ -301,11 +310,15 @@ hudobj
 
 		BuildComponents()
 			hide()
-			client.menu["0"]=src
+			var/list/active_vals=list("character","inventory","skills","-")
+			client.menu["0"]=src//position "0" will always refer to the primary menu anchor
 			for(var/i=1 to 4)
 				var/obj/HudobjHelper/a=new/obj/HudobjHelper/menu_options
-				a.pixel_y=-64*i
-				client.menu["[i]"]=a
+				a.id=i
+				a.active=active_vals[i]
+				a.pixel_y=-70*i
+				a.name="[client.menu_category]-[i]"
+				client.menu["[client.menu_category]-[i]"]=a
 				vis_contents+=a
 
 
