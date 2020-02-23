@@ -29,36 +29,29 @@ mob
 		ingame=1
 		step_size=GetSpeed()
 		setPosition(rand(700,705),rand(1150,1155),1)
-		global.player_list+=client
-		PrntToClients(src,"Welcome to Dragon Chronicles v[game_version]\nPress alt+2 to see the instructions\nPress alt+1 to open the output console")
+		player_list+=client
 		src<<"Type /setcounter to change your counter type"
 		AddHud()
 		render_target="player/[client.ckey]"
 
 
 	Logout()
-		..()
-		del client.chatbox
-		del client.textbox
-		del client.fullscreen
-		for(var/datum/s in client.menu)
-			s.destroy=1
-			del s
-		global.player_list-=src
-		del src
+		if(key)
+			player_list[key]=null
+			del src
 
 
-turf
-	icon='Icons/Map/Turf.dmi'
-	New()
-		..()
-		icon+=rgb(rand(1,255),rand(1,255),rand(1,255))
 
-world
-	maxx=50
-	maxy=50
-	maxz=1
 
 
 client
 	perspective=EDGE_PERSPECTIVE
+
+	Del()
+		del chatbox
+		del textbox
+		del fullscreen
+		for(var/datum/s in menu)
+			s.destroy=1
+			del s
+		..()

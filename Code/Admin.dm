@@ -24,6 +24,8 @@ mob
 				usr.client.fullscreen.fade(0,10)
 			if(a=="/fade out")
 				usr.client.fullscreen.fade(255,10)
+			if(a=="/fps")
+				usr<<world.fps
 
 
 

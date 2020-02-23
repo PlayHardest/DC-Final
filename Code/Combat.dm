@@ -35,9 +35,9 @@ mob
 				bump_movement_action="End"
 				if(target?.hyper_move)	UnTarget()
 				if(target && (GetDist(src,target)<96))
-					Move_To(target,_speed=10,t_dist=40,height_adjust=1)
+					Move_To(target,_speed=20,homing=1,t_dist=40,height_adjust=1)
 				else
-					Walk(40,dir,10)
+					Walk(40,dir,20)
 			else
 				if(attack=="light")
 					LightAttack()

@@ -1,7 +1,7 @@
 // BEGIN_INTERNALS
 /*
 MAP_ZOOM: 1.000
-LAST_COMPILE_TIME: 1582320787
+LAST_COMPILE_TIME: 1582494765
 DIR: Code Icons Icons\Effects Icons\Map Icons\Mobs Icons\UI External 
 PACKAGE_RSC_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_rsc.zip
 AUTO_FILE_DIR: ON
@@ -11,9 +11,9 @@ PACKAGE_DME_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_src
 LAST_COMPILE_VERSION: 513.1494
 PACKAGE_TYPE: 0
 PACKAGE_DME_START: 
-WINDOW: Code\Effects.dm;Code\Combat.dm;Code\Todo.dm;Code\Admin.dm;Code\Main.dm;Code\Preferences.dm;Code\Mobs.dm;Code\Variables.dm;Code\HUD.dm;Code\Menu.dm;Code\Keyboard.dm;Code\Procedures.dm;Icons\UI\Menu.dmi;Icons\UI\HUD.dmi;Code\#define.dm
+WINDOW: Code\Effects.dm;Code\Combat.dm;Code\Todo.dm;Code\Admin.dm;Code\Main.dm;Code\Preferences.dm;Code\Mobs.dm;Code\Variables.dm;Code\HUD.dm;Code\Menu.dm;Code\Keyboard.dm;Code\Procedures.dm;Icons\UI\Menu.dmi;Icons\UI\HUD.dmi;Icons\Map\Turf.dmi;TestMap.dmm;Code\#define.dm;Interface.dmf;Icons\Map\Cliff.dmi;Code\Turf.dm;Code\MapObject.dm;Canvas.dmm
 PACKAGE_DME_INFO: 
-FILE: Code\Menu.dm
+FILE: Code\MapObject.dm
 PACKAGE_DMB_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final.zip
 PACKAGE_DME_DEMO: 
 */

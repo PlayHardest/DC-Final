@@ -33,11 +33,13 @@
 #include "Code\HUD.dm"
 #include "Code\Keyboard.dm"
 #include "Code\Main.dm"
+#include "Code\MapObject.dm"
 #include "Code\Menu.dm"
 #include "Code\Mobs.dm"
 #include "Code\Preferences.dm"
 #include "Code\Procedures.dm"
 #include "Code\Todo.dm"
+#include "Code\Turf.dm"
 #include "Code\Variables.dm"
 // END_INCLUDE
 

@@ -195,8 +195,8 @@ mob
 		list
 			combos=list()//list of all owned combos
 
-		HP=100
-		MaxHP=100
+		HP=300
+		MaxHP=300
 		Energy=150
 		MaxEnergy=150
 		base_damage=10

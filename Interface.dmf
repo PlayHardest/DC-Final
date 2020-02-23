@@ -1,23 +1,5 @@
 macro "macro"
 	elem 
-		name = "Center+REP"
-	elem 
-		name = "Northeast+REP"
-	elem 
-		name = "Southeast+REP"
-	elem 
-		name = "Southwest+REP"
-	elem 
-		name = "Northwest+REP"
-	elem 
-		name = "West+REP"
-	elem 
-		name = "North+REP"
-	elem 
-		name = "East+REP"
-	elem 
-		name = "South+REP"
-	elem 
 		name = "Any"
 		command = "KeyDown [[*]]"
 	elem 
@@ -91,7 +73,7 @@ window "controls"
 		text-color = #ffffff
 		background-color = #000000
 		saved-params = ""
-		text = "Z - Light Attack\nX - Heavy Attack\nC - Block\nC+UP - Charge Ki\nSpace - Jump\nSpace after a knockback - Chase \nSpace while being attacked - Hyper Movement (costs 50 energy - invincible)\nSpace while in recovery frames - Hyper Movement  (costs 20 energy)\nSpace while in a finisher combo animation - Hyper Movement (costs 10 energy)\nSpace when an opponent uses their hyper movement - Hyper Movement (costs 20 energy)"
+		text = "Double tap a direction to run, do it while mid air to fly\nZ - Light Attack\nX - Heavy Attack\nC - Block\nC+UP - Charge Ki\nSpace - Jump\nSpace after a knockback - Chase \nSpace while being attacked - Hyper Movement (costs 50 energy - invincible)\nSpace while in recovery frames - Hyper Movement  (costs 20 energy)\nSpace while in a finisher combo animation - Hyper Movement (costs 10 energy)\nSpace when an opponent uses their hyper movement - Hyper Movement (costs 20 energy)"
 
 window "window1"
 	elem "window1"
@@ -121,7 +103,9 @@ window "window1"
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
+		is-default = true
 		saved-params = "zoom;letterbox;zoom-mode"
+		on-size = "onResize \"[[id]][[size]]\""
 		icon-size = 32
 		zoom = 1
 

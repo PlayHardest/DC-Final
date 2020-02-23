@@ -47,6 +47,8 @@ mob
 			EnergyAdjust(0)
 			if(client.options.combo_guide)	combotrack.show()
 			ShowComboProgress()
+			PrntToClients(src,"Welcome to Dragon Chronicles v[game_version]\nPress alt+2 to see the instructions\nPress alt+1 to open the output console")
+
 
 		ShowComboProgress()
 			set waitfor=0
@@ -148,6 +150,18 @@ obj
 			icon='Menu.dmi'
 			icon_state="option"
 
+			/*MouseEntered()
+				var/client/c=usr.client
+				if(c.menu_category!=active)
+					var/val=c.menu_active-id
+					c.ChangeActive(-val)
+				world<<"[c.menu_category]|[active]"
+
+			Click()
+				if(usr.client.menu_category!=active)
+					usr.client.ActiveSelect()
+				world<<"[usr.client.menu_category]|[active]"
+				..()*/
 
 		AMaskBar
 			appearance_flags = KEEP_TOGETHER
