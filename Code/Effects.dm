@@ -7,8 +7,8 @@ visual_fx
 
 	Aura
 		active=1
-		vis_flags=VIS_INHERIT_ICON_STATE|VIS_INHERIT_DIR
-		layer=MOB_LAYER+2
+		vis_flags=VIS_INHERIT_ICON_STATE|VIS_INHERIT_DIR|VIS_INHERIT_LAYER
+		//layer=MOB_LAYER
 		pixel_x=-33
 		pixel_y=-31
 

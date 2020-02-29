@@ -55,3 +55,14 @@ client
 			s.destroy=1
 			del s
 		..()
+
+
+atom
+	movable
+		LocationFind(_z)//discover size of instance here
+			switch(_z)
+				if(1)
+					MAP_X=80
+					MAP_Y=80
+			maxgx=MAP_X*TILE_WIDTH
+			maxgy=MAP_Y*TILE_HEIGHT

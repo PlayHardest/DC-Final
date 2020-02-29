@@ -328,7 +328,7 @@ hudobj
 			client.menu["0"]=src//position "0" will always refer to the primary menu anchor
 			for(var/i=1 to 4)
 				var/obj/HudobjHelper/a=new/obj/HudobjHelper/menu_options
-				a.id=i
+				a._id=i
 				a.active=active_vals[i]
 				a.pixel_y=-70*i
 				a.name="[client.menu_category]-[i]"

@@ -1,39 +1,39 @@
-"a" = (/turf,/area)
-"b" = (/obj/MapObject/Cliff{icon_state = "dark grass4"},/turf,/area)
-"c" = (/obj/MapObject/Cliff{icon_state = "Cliff Back Corner Left"},/turf,/area)
-"d" = (/obj/MapObject/Cliff{icon_state = "Cliff Back"},/turf,/area)
-"e" = (/obj/MapObject/Cliff{icon_state = "Cliff Back Corner Right"},/turf,/area)
-"f" = (/obj/MapObject/Cliff{icon_state = "Cliff Left"},/turf,/area)
-"g" = (/obj/MapObject/Cliff{icon_state = "Cliff Right"},/turf,/area)
-"h" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Left"},/turf,/area)
-"i" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Middle"},/turf,/area)
-"j" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Right"},/turf,/area)
-"k" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle Left"},/turf,/area)
-"l" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle"},/turf,/area)
-"m" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle Right"},/turf,/area)
-"n" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Left"},/turf,/area)
-"o" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Middle"},/turf,/area)
-"p" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Right"},/turf,/area)
+"a" = (/obj/MapObject/Cliff{icon_state = "dark grass4"},/turf/Grass,/area)
+"b" = (/turf/Grass,/area)
+"c" = (/obj/MapObject/Cliff{icon_state = "Cliff Back Corner Left"},/turf/Grass,/area)
+"d" = (/obj/MapObject/Cliff{icon_state = "Cliff Back"},/turf/Grass,/area)
+"e" = (/obj/MapObject/Cliff{icon_state = "Cliff Back Corner Right"},/turf/Grass,/area)
+"f" = (/obj/MapObject/Cliff{icon_state = "Cliff Left"},/turf/Grass,/area)
+"g" = (/obj/MapObject/Cliff{icon_state = "Cliff Right"},/turf/Grass,/area)
+"h" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Left"},/turf/Grass,/area)
+"i" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Middle"},/turf/Grass,/area)
+"j" = (/obj/MapObject/Cliff{icon_state = "Cliff Top Right"},/turf/Grass,/area)
+"k" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle Left"},/turf/Grass,/area)
+"l" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle"},/turf/Grass,/area)
+"m" = (/obj/MapObject/Cliff{icon_state = "Cliff Middle Right"},/turf/Grass,/area)
+"n" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Left"},/turf/Grass,/area)
+"o" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Middle"},/turf/Grass,/area)
+"p" = (/obj/MapObject/Cliff{icon_state = "Cliff Bottom Right"},/turf/Grass,/area)
 
 (1,1,1) = {"
-baaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-cdeaaaaaaaaaaaaaaaaa
-fagaaaaaaaaaaaaaaaaa
-hijaaaaaaaaaaaaaaaaa
-klmaaaaaaaaaaaaaaaaa
-nopaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
+abbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+cdebbbbbbbbbbbbbbbbb
+fbgbbbbbbbbbbbbbbbbb
+hijbbbbbbbbbbbbbbbbb
+klmbbbbbbbbbbbbbbbbb
+nopbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
 "}

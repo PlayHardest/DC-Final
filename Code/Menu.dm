@@ -14,7 +14,7 @@ client
 			lock_input()
 			switch(menu_category)
 				if("main")
-					OptionMove(menu_focus.id,new_x=-view_width*32,t=3,_easing=BACK_EASING)//move all menu options off screen except the active one
+					OptionMove(menu_focus._id,new_x=-view_width*32,t=3,_easing=BACK_EASING)//move all menu options off screen except the active one
 					OptionMove(new_x=0,new_y=75,t=2,delay=0,range_start=menu_active,range_end=menu_active)//move only the selected option to the top of the screen
 					sleep(10)
 					menu_category=menu_focus.active//set the new category to what the focused option was pointing to
@@ -75,9 +75,9 @@ client
 					//get rid of the specific menu option content here
 					lock_input()
 					menu_focus=menu[menu_hierarchy_id[menu_category]]//find the title menu option
-					menu_active=menu_focus.id
+					menu_active=menu_focus._id
 					if(menu_hierarchy[menu_category])	menu_category=menu_hierarchy[menu_category]
-					OptionMove(new_y=-70*menu_focus.id,t=2,delay=0,range_start=menu_active,range_end=menu_active)//move the title menu option back to where it should be
+					OptionMove(new_y=-70*menu_focus._id,t=2,delay=0,range_start=menu_active,range_end=menu_active)//move the title menu option back to where it should be
 					OptionMove(menu_active,new_x=0,t=5,delay=2,_easing=BACK_EASING)//move all of the other options back into place to create the main menu again
 					unlock_input()
 

@@ -85,7 +85,6 @@ var
 
 obj
 	var
-		id=0
 
 		tmp
 			end_var=""

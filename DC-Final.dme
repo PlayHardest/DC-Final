@@ -20,7 +20,7 @@
 #define ADMIN 1
 #define JUMP 1
 #define JUMP_ACCEL 16
-#define CEILING 100
+#define CEILING 120
 // BEGIN_INCLUDE
 #include <cheesypants\ARPGFramework\ARPGFramework.dme>
 #include "Interface.dmf"

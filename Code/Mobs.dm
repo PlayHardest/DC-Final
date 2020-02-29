@@ -92,8 +92,8 @@ mob
 
 	Man
 		icon='Icons/Mobs/Base.dmi'
-		bound_x=-9
-		bound_y=-2
+		bound_x=9
+		bound_y=2
 		bound_height=8
 		bound_width=13
 		HP=200
@@ -113,7 +113,7 @@ mob
 
 	Player
 		icon='Icons/Mobs/Base.dmi'
-		bound_x=-9
-		bound_y=-2
+		bound_x=9
+		bound_y=2
 		bound_height=8
 		bound_width=13

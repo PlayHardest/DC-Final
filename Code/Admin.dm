@@ -80,6 +80,9 @@ mob
 					//Walk(m,EAST)
 					Move_To(m,_speed=45,homing=1)//,_readjust=1)
 					return
+			if("/nodense")
+				no_dense=!no_dense
+				src<<"density toggled"
 			if("/ticklag")
 				src<<world.tick_lag
 			if("/del")

@@ -1,4 +1,4 @@
-#define FPS 50
+#define FPS 25
 #define K_ATTACK1 "z"
 #define K_ATTACK2 "x"
 #define K_BLOCK "c"

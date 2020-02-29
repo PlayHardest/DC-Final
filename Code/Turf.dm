@@ -7,5 +7,4 @@ turf
 
 		New()
 			..()
-			icon_state=pick("grass1","grass2","grass3","grass4")
-
+			icon_state=pick("grass","grass1","grass2","grass3","grass4")

@@ -23,7 +23,7 @@ General
 	-Skills will be displayed same way as before
 	-Remove as much mouse usage as possible
 	-Create an intuitive way to target enemies (always start from the last person you attacked, then the last one to attack you and then move on from there)
-	-Create boundaries
+	-(DONE)Create boundaries
 
 UI
 	-Combo counter with damage info (like in budokai 3)
