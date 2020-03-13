@@ -43,6 +43,7 @@ mob
 			DisplayFrame=Object_Pool(/image/EnemyHUD/Frame,creation_params=list("loc"=src))
 			DisplayHPbar=Object_Pool(/image/EnemyHUD/HP,creation_params=list("loc"=src))
 			DisplayKibar=Object_Pool(/image/EnemyHUD/Ki,creation_params=list("loc"=src))
+			Target=Object_Pool(/image/TargetIndicator,creation_params=list("loc"=src))
 			HealthAdjust(0)
 			EnergyAdjust(0)
 			if(client.options.combo_guide)	combotrack.show()
@@ -59,6 +60,7 @@ mob
 					if(finisher)
 						combostring="[combostring]-f"
 				animate(combotrack,icon_state=combostring,time=2)
+
 
 
 		ShowStatus(mob/m)
@@ -104,6 +106,16 @@ image
 			M.Translate(-buffer,0)
 			animate(src,transform=M,time=_time)
 
+	TargetIndicator
+		icon='Icons/Effects/Target.dmi'
+		name="Targeter"
+		pixel_y=-1
+		vis_flags=VIS_UNDERLAY
+
+		Create(list/params)
+			for(var/s in params)
+				vars[s] = params[s]
+			layer=4
 
 	EnemyHUD
 		pixel_x=-11

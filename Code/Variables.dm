@@ -12,6 +12,12 @@ var
 		max_menu_value=list("main"=4)
 		min_menu_value=list("main"=1)
 
+		kiattackstates=list("ki blast"="kiblast","kiknockback"="finalflashfire")
+		kistatestart=list("kiblast1"=3,"kiblast2"=3)
+		kiattackcost=list("ki blast"=-2,"kiknockback"=-5)
+
+		kia_states=list("kiblast")
+
 		trailbars=list("health")
 		attackstates=list("puncha","punchb","kicka","kickb")
 		animation_states=list("puncha"=3,"punchb"=3,"kicka"=3,"kickb"=3)
@@ -19,7 +25,8 @@ var
 
 		all_combos=list("basic light"=list("light","light","light","light"),
 						"basic heavy"=list("heavy","heavy","heavy","heavy"),
-						"basic launch"=list("light","light","heavy","heavy")
+						"basic launch"=list("light","light","heavy","heavy"),
+						"basic kiblast"=list("ki blast","ki blast","ki blast","ki blast")
 						)
 
 		menu_hierarchy=list("main"="","inventory"="main","character"="main","skills"="main","-"="main")
@@ -28,20 +35,22 @@ var
 
 		all_finishers=list("basic light"=list("default light"),
 						   "basic heavy"=list("default heavy"),
-						   "basic launch"=list("default launch")
+						   "basic launch"=list("default launch"),
+						   "basic kiblast"=list("default ki blast")
 						   )
 
 		combo_multipliers=list("basic light"=list(0.7,0.6,0.9,1),
 							   "basic heavy"=list(1,0.8,1,1.2),
-							   "basic launch"=list(0.7,0.6,0.8,0.8)
+							   "basic launch"=list(0.7,0.6,0.8,0.8),
+							   "basic kiblast"=list(0.3,0.3,0.3,0.5)
 							  )
 
 		invincible_attack=list("push","push-master","default counter","falling launch")
 
-		attackduration=list("light"=8,"heavy"=10,"launch"=10,"ground"=10,"kb"=10,"nudge"=9,"soft nudge"=9,"hard nudge"=9,"stun nudge"=9,"chaseatk"=15,"push"=10,"default counter"=10,
+		attackduration=list("ki blast"=10,"kiknockback"=12,"light"=8,"heavy"=10,"launch"=10,"ground"=10,"kb"=10,"nudge"=9,"soft nudge"=9,"hard nudge"=9,"stun nudge"=9,"chaseatk"=15,"push"=10,"default counter"=10,
 							"push-master"=10,"falling launch"=4)
 
-		can_combo=list("light","heavy")
+		can_combo=list("light","heavy","ki blast")
 
 
 		attack_info=list("light"="bound_height=20&bound_width=20&power=0.9&active=2&effect=1&duration=8&a_type=Physical|center-front",
@@ -123,6 +132,8 @@ mob
 		del DisplayFrame
 		del aura_fx
 		del flash_fx
+		del detect_range
+		del active_proj
 		vis_contents=list()
 		..()
 
@@ -136,11 +147,15 @@ mob
 			image/DisplayHPbar
 			image/DisplayKibar
 			image/DisplayFrame
+			image/Target
+			image/targ_image
 
 			mob/hurtby
 			mob/lasthit
 			mob/target
 
+			obj/detect_range
+			obj/active_proj
 			obj/h_box
 			obj/HudobjHelper/AMaskBar/HPbar
 			obj/HudobjHelper/AMaskBar/Kibar
@@ -202,4 +217,6 @@ mob
 		light_combo="default light"
 		heavy_combo="default heavy"
 		launch_combo="default launch"
+		kiblast_combo="default ki blast"
+		kiblast_type="ki blast"
 		counter_type="default counter"

@@ -21,8 +21,8 @@ General
 	-Save System
 	-Inventory System (list--> most items will be displayed in text form)
 	-Skills will be displayed same way as before
-	-Remove as much mouse usage as possible
-	-Create an intuitive way to target enemies (always start from the last person you attacked, then the last one to attack you and then move on from there)
+	-(DONE)Remove as much mouse usage as possible
+	-(DONE)Create an intuitive way to target enemies (always start from the last person you attacked, then the last one to attack you and then move on from there)
 	-(DONE)Create boundaries
 
 UI
@@ -39,5 +39,11 @@ Bugs
 	-(DONE)Implement key repeats for typing
 	-(DONE)Change map to grass
 	-(DONE)Improve the homing speed of the initial light/heavy attack
+
+Combat
+	-Create a combo limit where when reached the person being combo'd will be able to hyper_move out for no cost
+	-Make skills not contribute towards this limit
+	-Make repeating buttons add to this limit incrementally(e.g. - first Z combo adds 10, second Z combo adds 18), to give incentive to use the other combos
+	-Make certain interactions decrease or freeze the combo limit for a set amount of time
 */
 

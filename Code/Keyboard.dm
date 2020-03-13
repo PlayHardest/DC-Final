@@ -2,6 +2,7 @@ Controls
 	var
 		l_attack=K_ATTACK1
 		h_attack=K_ATTACK2
+		ki_blast=K_BLAST
 		block=K_BLOCK
 		menu=K_ESC
 
@@ -54,18 +55,22 @@ mob
 				Jump()
 			if(k==c.controls.block)
 				Block()
+			if(k==c.controls.ki_blast)
+				KiBlast(kiblast_type)
 			if(k==c.controls.l_attack)
 				GenAttack("light")
 			if(k==c.controls.h_attack)
 				GenAttack("heavy")
 			if(k in directional_keys)
 				MoveLoop()
-			if(k=="v")
-				Pursue()
+			//if(k=="v")
+			//	Pursue()
 		else
 			if(k==c.controls.up)
 				if(c.keys["[c.controls.block]"])
 					Charge()
+		if(k=="u")
+			UnTarget()
 		if(c.lastpressed)
 			c.lastpressed=null
 

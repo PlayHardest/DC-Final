@@ -8,6 +8,7 @@
 // BEGIN_FILE_DIR
 #define FILE_DIR .
 #define FILE_DIR "Icons"
+#define FILE_DIR "Icons/Attacks"
 #define FILE_DIR "Icons/Effects"
 #define FILE_DIR "Icons/Map"
 #define FILE_DIR "Icons/Mobs"
@@ -38,6 +39,7 @@
 #include "Code\Mobs.dm"
 #include "Code\Preferences.dm"
 #include "Code\Procedures.dm"
+#include "Code\Projectiles.dm"
 #include "Code\Todo.dm"
 #include "Code\Turf.dm"
 #include "Code\Variables.dm"

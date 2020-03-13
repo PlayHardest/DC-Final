@@ -12,6 +12,8 @@ mob
 					ComboEnd(heavy_combo)
 				if("basic launch")
 					ComboEnd(launch_combo)
+				if("basic kiblast")
+					ComboEnd(kiblast_combo)
 
 		ComboEnd(combo)
 			switch(combo)
@@ -21,6 +23,18 @@ mob
 					DefaultHeavyFinish()
 				if("default launch")
 					DefaultLaunchFinish()
+				if("default ki blast")
+					DefaultBlastFinish()
+
+		DefaultBlastFinish()
+			sleep(0)
+			if(!lasthit)
+				finisher=0
+				return
+			if(target!=lasthit)	GetTarget(lasthit)
+			lasthit.Flinch(30)
+			finisher=2//if finisher is equal to 2 then dont cancel animations; The next attack performed will signal the end of the finisher
+			KiBlast("kiknockback")
 
 
 		DefaultLightFinish()

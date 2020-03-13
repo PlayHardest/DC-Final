@@ -1,5 +1,6 @@
 mob
 	Bump(atom/O)
+		set waitfor=0
 		..()
 		switch(bump_movement_action)
 			if("End")
@@ -34,6 +35,7 @@ mob
 					var/mob/M=O
 					if(!M.block)
 						M.Flinch(15)
+					sleep(world.tick_lag)
 					if(attacking)	return//if you are already attacking dont proceed
 					a_state = rand(1,4)//assign an animation state to the attack, here it will be a punch
 					attack_anim=1//set the flag for an attacking animation
@@ -87,6 +89,7 @@ mob
 			DisplayFrame=Object_Pool(/image/EnemyHUD/Frame,creation_params=list("loc"=src))
 			DisplayHPbar=Object_Pool(/image/EnemyHUD/HP,creation_params=list("loc"=src))
 			DisplayKibar=Object_Pool(/image/EnemyHUD/Ki,creation_params=list("loc"=src))
+			Target=Object_Pool(/image/TargetIndicator,creation_params=list("loc"=src))
 		HealthAdjust(0)
 		EnergyAdjust(0)
 

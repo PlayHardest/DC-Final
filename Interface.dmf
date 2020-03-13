@@ -60,10 +60,13 @@ window "controls"
 		size = 544x205
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Controls"
 		statusbar = false
+		outer-size = 562x252
+		inner-size = 544x205
 	elem "label1"
 		type = LABEL
 		pos = 0,0
@@ -73,7 +76,7 @@ window "controls"
 		text-color = #ffffff
 		background-color = #000000
 		saved-params = ""
-		text = "Double tap a direction to run, do it while mid air to fly\nZ - Light Attack\nX - Heavy Attack\nC - Block\nC+UP - Charge Ki\nSpace - Jump\nSpace after a knockback - Chase \nSpace while being attacked - Hyper Movement (costs 50 energy - invincible)\nSpace while in recovery frames - Hyper Movement  (costs 20 energy)\nSpace while in a finisher combo animation - Hyper Movement (costs 10 energy)\nSpace when an opponent uses their hyper movement - Hyper Movement (costs 20 energy)"
+		text = "Double tap a direction to run, do it while mid air to fly\nZ - Light Attack\nX - Heavy Attack\nC - Block\nC+UP - Charge Ki\nV - Ki Blast\nU - Untarget\nSpace - Jump\nSpace after a knockback - Chase \nSpace while being attacked - Hyper Movement (costs 50 energy - invincible)\nSpace while in recovery frames - Hyper Movement  (costs 20 energy)\nSpace while in a finisher combo animation - Hyper Movement (costs 10 energy)\nSpace when an opponent uses their hyper movement - Hyper Movement (costs 20 energy)"
 
 window "window1"
 	elem "window1"
@@ -82,20 +85,17 @@ window "window1"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Dragon Chronicles"
 		statusbar = false
 		macro = "macro"
-		outer-size = 658x526
 	elem "browser1"
 		type = BROWSER
 		pos = 0,0
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = ""
 	elem "map1"
 		type = MAP
@@ -105,7 +105,7 @@ window "window1"
 		anchor2 = 100,100
 		is-default = true
 		saved-params = "zoom;letterbox;zoom-mode"
-		on-size = "onResize \"[[id]][[size]]\""
+		on-size = "onResize \"[[id]]\" \"[[size]]\""
 		icon-size = 32
 		zoom = 1
 

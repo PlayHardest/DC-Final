@@ -1,17 +1,24 @@
+var
+	list
+		flicktime=list("hit"=4,"block"=5)
+
 visual_fx
 	Flash
 		active=1
-		//vis_flags=VIS_INHERIT_ICON|VIS_INHERIT_ICON_STATE|VIS_INHERIT_DIR//|VIS_UNDERLAY
+		vis_flags=VIS_INHERIT_DIR//|VIS_UNDERLAY|VIS_INHERIT_ICON|VIS_INHERIT_ICON_STATE
 		plane=FLOAT_PLANE+1
 		varname="flash_fx"
 
 	Aura
 		active=1
-		vis_flags=VIS_INHERIT_ICON_STATE|VIS_INHERIT_DIR|VIS_INHERIT_LAYER
+		vis_flags=VIS_INHERIT_DIR|VIS_INHERIT_LAYER|VIS_INHERIT_ICON_STATE
 		//layer=MOB_LAYER
 		pixel_x=-33
 		pixel_y=-31
 
+	size32x32
+		icon='Icons/Effects/32x32.dmi'
+		icon_state="rest"
 
 	Jump_fx
 		icon='Icons/Effects/JumpEffect.dmi'
@@ -131,16 +138,34 @@ proc
 		if(!m||!_color)	return
 		if(!m.flash_fx)
 			m.flash_fx=Recycle(/visual_fx/Flash)//,lease=6000)
-			m.flash_fx.render_source=m.render_target
+			m.flash_fx.appearance=m.appearance
+			m.flash_fx.vis_flags=VIS_INHERIT_DIR//|VIS_UNDERLAY|VIS_INHERIT_ICON|VIS_INHERIT_ICON_STATE
 			m.flash_fx.Owner=m
-		m.flash_fx.color=_color
 		if(!(m.flash_fx in m.vis_contents))
 			m.vis_contents+=m.flash_fx
+		//m.flash_fx.color=list(0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0)
+		//m.flash_fx.filters+=filter(type="alpha",icon='Icons/Effects/32x32.dmi')
+		m.flash_fx.color=_color
 		m.flash_fx.active=2
 		sleep(time)
 		if(m?.flash_fx)
 			m.flash_fx.active=1
-			m.flash_fx.color=null
+			//m.flash_fx.color=null
+			m.flash_fx.filters=list()
 			m.vis_contents-=m.flash_fx
 
 
+
+	Hitfx(mob/m,state="hit")
+		set waitfor=0
+		if(!m)	return
+		var/visual_fx/I = Recycle(/visual_fx/size32x32)
+		I.flickstate=state
+		I.setPosition(m)
+		I.layer=m.layer
+		I.plane=FLOAT_PLANE+1
+		I.pixel_x+=rand(-16,16)
+		I.pixel_y+=rand(-16,16)
+		flick(I.flickstate,I)
+		if(flicktime[state])	sleep(flicktime[state])
+		Recycle(e=I)

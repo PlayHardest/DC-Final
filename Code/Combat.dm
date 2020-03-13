@@ -1,8 +1,4 @@
 mob
-	Click()
-		usr.GetTarget(src)
-		..()
-
 	proc
 		Block()
 			block=world.timeofday//set the block flag to world.timeofday to easier facilitate counters
@@ -21,18 +17,31 @@ mob
 		GetTarget(mob/m)
 			if(!m||m==src)	return
 			if(target==m)
-				target=null
+				UnTarget()
 				return
+			if(target)
+				UnTarget()
 			target=m
+			src<<m.Target
+			targ_image=m.Target
 
 		UnTarget()
-			if(target)	target=null
+			if(target)
+				target=null
+				if(client)
+					client.images-=targ_image
+					targ_image=null
 
 
 		GenAttack(attack="light")
 			if(!attackstring.len)
 				end_movement_action=attack
 				bump_movement_action="End"
+				if(!target)
+					if(!detect_range)	detect_range=Object_Pool(/obj/Detection,creation_params=list("Owner"=src,"bound_width"=96,"bound_height"=48))
+					var/mob/m=detect_range.Activate(96,48)
+					if(!m)	m=detect_range.Activate(72,72,"center")
+					if(m)	GetTarget(m)
 				if(target?.hyper_move)	UnTarget()
 				if(target && (GetDist(src,target)<96))
 					Move_To(target,_speed=20,homing=1,t_dist=40,height_adjust=1)
@@ -186,6 +195,7 @@ mob
 				return
 			//CARRY OUT SPECIAL INTERACTIONS FOR WHEN A CERTAIN TYPE OF DAMAGE IS TAKEN BY m
 			if(dmg)
+				Hitfx(m)
 				if(a_state)//if the attack lands the user can cancel the recovery frames of the animation
 					if(finisher!=2)//does not cancel from the last attack of a finisher automatically, instead the player must trigger it by either using a skill or a
 						attacking=0//special interaction (chase)
@@ -201,6 +211,7 @@ mob
 				if(finisher)	finisher_confirm=1//set flag to indicate that the hit landed, regardless of if it did damage or not
 			else   //if the user was blocking (didnt take any damage)
 				if(m.block)
+					Hitfx(m,"block")
 					if(m.blockhit>world.timeofday-15) //and the timing is right
 						m.Counter(src)
 					return
@@ -327,7 +338,7 @@ mob
 			bump_movement_action="Chase Attack"
 			HyperMovement_fx(src)
 			if(mid_air)	ActivateAura(src,i='Icons/Effects/Aura.dmi')
-			Move_To(target,_speed=CHASE_SPEED,homing=1,t_dist=600,_fx=1,height_adjust=1)
+			Move_To(target,_speed=CHASE_SPEED,homing=1,t_dist=800,_fx=1,height_adjust=1)
 
 
 		StopChase()
@@ -377,15 +388,16 @@ mob
 			sleep(4)//play the death animation
 			PrntToClients("[src] is killed by [hurtby]")
 			if(!client)
-				del src
+				setPosition(700,1000,1)
+				//del src
 			else
 				setPosition(rand(700,705),rand(1150,1155),1)
-				HealthAdjust(MaxHP)
-				EnergyAdjust(MaxEnergy)
-				transform=null
-				dead=0
-				no_state=0
-				StateMachine()
+			HealthAdjust(MaxHP)
+			EnergyAdjust(MaxEnergy)
+			transform=null
+			dead=0
+			no_state=0
+			StateMachine()
 
 
 		CounterAttack(mob/m,air=0,_time=10)
@@ -727,9 +739,40 @@ mob
 			nudgestop=""
 
 obj
-	Hitbox
-		GrabBox
+	Detection
+		Create(list/Params)
+			for(var/v in Params)
+				vars[v] = Params[v]
+			if(!Owner)
+				destroy=1
+				del src
+			loc=Owner
 
+		Activate(bw,bh,tracking="center-front")
+			bound_height = bh ? bh : bound_height
+			bound_width = bw ? bw : bound_width
+			var/temp_bw=bound_width,temp_bh=bound_height,retval
+			switch(Owner.dir)
+				if(SOUTH,NORTH)
+					bound_height=max(temp_bw,temp_bh)
+					bound_width=min(temp_bw,temp_bh)
+				if(EAST,WEST)
+					bound_height=min(temp_bw,temp_bh)
+					bound_width=max(temp_bw,temp_bh)
+			Center(Owner,tracking)
+			var/min_dist=max(bound_height,bound_width)
+			for(var/mob/m in bounds(src)-Owner)
+				if(GetDist(m,Owner)<min_dist)
+					min_dist=GetDist(m,Owner)
+					retval=m
+			loc=locate(1,1,1)
+			return retval
+
+
+	Hitbox
+		icon='Icons/Effects/32x32.dmi'
+
+		GrabBox
 			Activate()
 				set waitfor=0
 				if(Owner.grabbed)	Owner.UnGrab()//if the owner is grabbing something release it
@@ -785,6 +828,12 @@ obj
 				else
 					vars[k] = text2num(l[k])
 			power*=Owner.GetMultiplier()
+			if(SEE_HITBOXES)
+				var/matrix/m=matrix()
+				m.Scale(bound_height/32,bound_width/32)
+				m.Translate(bound_height/2,bound_width/2)
+				transform=m
+				base_layer=5
 			Center(Owner,_loc)
 			Activate()
 			//bound_height,bound_width,power,active_frame,total_frames,effect,duration|placement
@@ -794,6 +843,7 @@ obj
 			sleep(active)
 			if(!Owner?.attacking)//if the attacking val for the owner is 0
 				return
+			Owner.grabbed=src//should move hitbox with owner
 			var/list/hit=list()
 			for(var/mob/m in bounds(src)-Owner)
 				if(Owner.bound_height>=abs(Owner._height-m._height))//if m is within the same height range as the caller

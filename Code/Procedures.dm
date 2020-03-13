@@ -110,6 +110,7 @@ mob
 		while(src)
 			LocationUpdate()
 			Gravity()
+			shadow?.SwitchMode()
 			if(client)
 				if(!ingame||finisher)
 					ingame_keys=1
