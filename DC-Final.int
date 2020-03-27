@@ -1,21 +1,21 @@
 // BEGIN_INTERNALS
 /*
 MAP_ZOOM: 1.000
-LAST_COMPILE_TIME: 1584069077
+LAST_COMPILE_TIME: 1585327625
+DIR: Code Icons Icons\Attacks Icons\Effects Icons\Map Icons\Mobs Icons\UI External 
 PACKAGE_RSC_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_rsc.zip
-DIR: Code Icons Icons\Attacks Icons\Effects Icons\Map Icons\Mobs Icons\UI 
-AUTO_FILE_DIR: ON
 NUDGE_AS_PIXELS: OFF
+AUTO_FILE_DIR: ON
 PACKAGE_DMB_INFO: 
 MAP_ICON_TYPE: 0
 PACKAGE_DME_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final_src.zip
 LAST_COMPILE_VERSION: 513.1513
-PACKAGE_DME_START: 
 PACKAGE_TYPE: 0
+PACKAGE_DME_START: 
+WINDOW: Code\Admin.dm;Code\Variables.dm;Code\Keyboard.dm;Code\#define.dm;Code\Procedures.dm;Code\Projectiles.dm;Icons\Attacks\32x32.dmi;Code\Todo.dm;Code\HUD.dm;Code\Combat.dm
 PACKAGE_DME_INFO: 
-WINDOW: Code\Admin.dm;TestMap.dmm;Icons\UI\ComboTracker.dmi;Code\Combat.dm;Code\Projectiles.dm;Code\Variables.dm;Icons\Attacks\32x32.dmi;Icons\Effects\Target.dmi;Icons\Mobs\Base.dmi;Code\Finishers.dm;Code\Keyboard.dm;Icons\Effects\32x32.dmi;Code\#define.dm;Code\Mobs.dm
-FILE: Code\Projectiles.dm
-PACKAGE_DME_DEMO: 
+FILE: Code\Admin.dm
 PACKAGE_DMB_NAME: C:\Users\the_K\Desktop\BYOND game dev\DC\DC-Final\DC-Final.zip
+PACKAGE_DME_DEMO: 
 */
 // END_INTERNALS

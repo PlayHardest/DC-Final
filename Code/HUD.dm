@@ -229,13 +229,13 @@ obj
 
 					if(_fill==1)
 						if(_time)
-							animate(fill,pixel_w=epx,pixel_z=epy,time=_time)
+							animate(fill,pixel_w=epx,pixel_z=epy,time=_time,flags=ANIMATION_END_NOW)
 						else
 							fill.pixel_w=epx
 							fill.pixel_z=epy
 					else if(_fill==2)
 						if(_time)
-							animate(fill2,pixel_w=epx,pixel_z=epy,time=_time)
+							animate(fill2,pixel_w=epx,pixel_z=epy,time=_time,flags=ANIMATION_END_NOW)
 						else
 							fill2.pixel_w=epx
 							fill2.pixel_z=epy

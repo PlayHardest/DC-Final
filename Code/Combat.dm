@@ -608,17 +608,17 @@ mob
 
 
 		Flinch(duration=15)
-			ingame=0
+			ingame=0//disable the ingame flag
 			flinching=1//set the flinching flag
-			travel_distance=0
-			if(mid_air)	hangtime=10
-			flinch_end=world.timeofday+duration//set the time when the user should stop flinching
-			if(last_flinch)//if the player has a last_flinch value that is active. i.e - the player has not yet finished flinching
-				var/list/l=flinchers["[last_flinch]"]//go to the corresponding index value and assign the list into a temporary var
+			travel_distance=0//set travel_distance to zero to kill any existing automated movement procs
+			if(mid_air)	hangtime=10//set hangtime to 10 to delay the mob's fall to the ground and allow them to be comboed
+			flinch_end=world.timeofday+duration//calculate the time when the user should stop flinching
+			if(last_flinch)//if the player has a last_flinch value that is active (i.e - the player has not yet finished flinching) then we remove that entry from the list
+				var/list/l=flinchers["[last_flinch]"]//go to the corresponding index value and assign the list into a temporary var of list type
 				if(src in l)//if the user is in this list
 					l-=src//remove them from it
 					if(l.len)//if the list has other users in it
-						flinchers["[last_flinch]"]=l//assign the new list to the flinchers index value
+						flinchers["[last_flinch]"]=l//assign the updated list to the flinchers index value
 					else
 						flinchers["[last_flinch]"]=null//otherwise assign null to the flinchers index value
 						flinchers-="[last_flinch]"//and remove the index value from the list
@@ -631,18 +631,18 @@ mob
 
 
 		Unflinch()
-			var/list/l=flinchers["[flinch_end]"]
-			if(src in l)
-				l-=src
-				if(l.len)
-					flinchers["[flinch_end]"]=l
-				else
-					flinchers["[flinch_end]"]=null
-					flinchers-="[flinch_end]"
-			flinching=0
-			flinch_end=0
-			if(!travel_distance)	ingame=1
-			last_flinch=0
+			var/list/l=flinchers["[flinch_end]"]//go to the corresponding index value and assign the list into a temp var
+			if(src in l)//if the mob who is calling this is in the list
+				l-=src//then remove them from it
+				if(l.len)//if the list still has players in it
+					flinchers["[flinch_end]"]=l//then assign the updated list to the flinchers index value
+				else//otherwise
+					flinchers["[flinch_end]"]=null//assign null to the flinchers index value
+					flinchers-="[flinch_end]"//and remove the index value from the list
+			flinching=0//disable the flinching flag
+			flinch_end=0//set the flinch_end value to zero
+			if(!travel_distance)	ingame=1//set the ingame flag to on once the player is not in automated movement
+			last_flinch=0//sets the last_flinch value to zero
 
 
 

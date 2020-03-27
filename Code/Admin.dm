@@ -33,6 +33,8 @@ mob
 		if(!(src in admins))	return
 		var/varval=input("Enter the var of [m] you would like to see.")as text|null//client.focus
 		switch(varval)
+			if("/getdist")
+				src<<"dist is [GetDist(src,m,1)]"
 			if("/mobs")
 				for(var/mob/a in world)
 					src<<a

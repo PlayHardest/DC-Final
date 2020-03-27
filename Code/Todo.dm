@@ -45,5 +45,13 @@ Combat
 	-Make skills not contribute towards this limit
 	-Make repeating buttons add to this limit incrementally(e.g. - first Z combo adds 10, second Z combo adds 18), to give incentive to use the other combos
 	-Make certain interactions decrease or freeze the combo limit for a set amount of time
+	-Add the fall/knocked down state
+
+Focus
+	-mechanic to handle transformation effectiveness and buff/debuff balance
+	-If knockback when focus is empty then the user will revert
+	-Taking damage will reduce the user's focus value
+	-When focus is less than 20% then energy will start to drain to alert user
+	-The focus value will recover after the user ki charges for 5 seconds
 */
 

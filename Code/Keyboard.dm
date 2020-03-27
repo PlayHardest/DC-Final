@@ -63,6 +63,8 @@ mob
 				GenAttack("heavy")
 			if(k in directional_keys)
 				MoveLoop()
+			if(k=="a")
+				Beam("beam")
 			//if(k=="v")
 			//	Pursue()
 		else

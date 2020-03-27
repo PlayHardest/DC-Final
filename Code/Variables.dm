@@ -14,7 +14,7 @@ var
 
 		kiattackstates=list("ki blast"="kiblast","kiknockback"="finalflashfire")
 		kistatestart=list("kiblast1"=3,"kiblast2"=3)
-		kiattackcost=list("ki blast"=-2,"kiknockback"=-5)
+		kiattackcost=list("ki blast"=-2,"kiknockback"=-5,"beam"=-40)
 
 		kia_states=list("kiblast")
 
@@ -91,17 +91,31 @@ var
 
 		flinchers=list()
 
+atom
+	movable
+		var
+			tmp
+				obj/h_box
 
 obj
 	var
 
 		tmp
+			list
+				parts=list()
+
+
 			end_var=""
 			a_type=""
 			base_state=""
 			orientation
 			grab_dmg=0
 			grab_end_hit=0
+			beam_y_offset
+			hits=0
+
+			obj/head
+			obj/body
 			//trail_bar=0
 
 client
@@ -156,7 +170,6 @@ mob
 
 			obj/detect_range
 			obj/active_proj
-			obj/h_box
 			obj/HudobjHelper/AMaskBar/HPbar
 			obj/HudobjHelper/AMaskBar/Kibar
 

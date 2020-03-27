@@ -1,12 +1,11 @@
 proc
-	GlobalCount()
-		set background=1
-		while(1)
-			if(flinchers["[world.timeofday]"])
-				var/list/l=flinchers["[world.timeofday]"]
-				for(var/mob/m in l)
-					m.Unflinch()
-			sleep(0)
+	GlobalCount()//GlobalCount() proc which manages when to disable flinching (or any other status that happens over time)
+		while(1)//while (constant) is an infinite loop
+			if(flinchers["[world.timeofday]"])//if the current world.timeofday value(precise down to the tick) has a value in the flinchers list
+				var/list/l=flinchers["[world.timeofday]"]//then we assign the value at that index to a temporary list
+				for(var/mob/m in l)//for every mob in that list
+					m.Unflinch()//we unflinch them
+			sleep(0)//then we wait until the end of the tick before contiuing
 			sleep(1)
 			sleep(-1)
 
@@ -79,6 +78,7 @@ mob
 		if(hangtime>0||(gravity==2 && run)||_height>=CEILING||(kb && !launch)||block||flinching||attacking||(run && fly)||charge||grabbedby)
 			retval=1
 		return retval
+
 
 	DelayHeightDecrease()
 		var/retval=0
