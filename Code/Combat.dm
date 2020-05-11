@@ -772,6 +772,38 @@ obj
 	Hitbox
 		icon='Icons/Effects/32x32.dmi'
 
+		BeamBody
+			density=1
+
+			Create(list/Params)
+				for(var/v in Params)//assign the vars
+					vars[v]=Params[v]
+				if(!Owner||!origin||!head||!body)	del src//destroy if no owner or origin or head
+				//effect = effect == 1 ? 5 : effect
+				dir=origin.dir
+				SizeAdjust()
+				name="[name]-h_box"
+				world<<"[bound_height],[bound_width]"
+				origin.parts+=src
+				if(SEE_HITBOXES)
+					base_layer=20
+					icon_state="2"
+
+			Move()
+				..()//after the move is completed
+				var/found=0
+				for(var/mob/m in phased_mobs)//check for mobs passed through
+					found=1
+					if(active>=13)
+						m.TakeDamage(Owner,power/2,2,200,"Energy")
+						head.travel_distance=0
+					else
+						m.TakeDamage(Owner,power/2,effect,duration,"Energy")
+						head.travel_distance+=head.step_size
+				active+=found
+				phased_mobs=list()
+				//world<<"phase_mobs emptied"
+
 		GrabBox
 			Activate()
 				set waitfor=0

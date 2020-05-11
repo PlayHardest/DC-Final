@@ -1,4 +1,8 @@
 mob
+	Click()
+		usr<<"[Get_Angle(usr,src,"source",anti_clockwise=0)]"
+
+
 	Bump(atom/O)
 		set waitfor=0
 		..()
